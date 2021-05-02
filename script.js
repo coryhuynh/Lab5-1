@@ -3,10 +3,8 @@ var synth = window.speechSynthesis;
 var voiceSelect = document.getElementById("voice-selection");
 var voices = []
 function populateVoiceList() {
-  console.log("Hello");
   voices = synth.getVoices();
 
-  console.log(voices[1]);
   for(var i = 0; i < voices.length ; i++) {
     var option = document.createElement('option');
 
@@ -34,7 +32,6 @@ var imageBtn = document.getElementById("image-input");
 imageBtn.addEventListener('change', (event) =>{
     img.src = URL.createObjectURL(event.target.files[0]);
     img.alt = event.target.files[0]['name'];
-    console.log(img.alt);
 });
 
 // Fires whenever the img object loads a new image (such as with img.src =)
@@ -92,7 +89,6 @@ clearBtn.addEventListener('click', ()=>{
 
 const volumeSlider = document.getElementById("volume-group");
 var volume = volumeSlider.children[1].value;
-console.log(volume);
 volumeSlider.children[1].addEventListener('input', ()=>{
   volume = volumeSlider.children[1].value;
   if(volume >= 67){
